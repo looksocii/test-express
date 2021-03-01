@@ -3,15 +3,19 @@ name: Check Code Format by Prettier & Test by Jest
 on:
   push:
     branches:
+      - '*'
+      - '!main'
+  pull_request:
+    branches:
       - 'main'
 
 jobs:
-  install-pack:
-    name: Install all package
+  check-code:
+    name: Check code
     runs-on: ubuntu-latest
     steps:
-      - name: Cheack
+      - name: Checkout the repo
         uses: actions/checkout@v2
-      - runs: npm install
-      - runs: npm run prettier-check
-      - runs: npm run test
+      - run: npm install
+      - run: npm run prettier-check
+      - run: npm run test
