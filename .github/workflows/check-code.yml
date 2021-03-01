@@ -3,10 +3,6 @@ name: Check Code Format by Prettier & Test by Jest
 on:
   push:
     branches:
-      - '*'
-      - '!main'
-  pull_request:
-    branches:
       - 'main'
 
 jobs:
