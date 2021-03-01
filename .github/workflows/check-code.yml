@@ -10,22 +10,8 @@ jobs:
     name: Install all package
     runs-on: ubuntu-latest
     steps:
-      - name: install pack
+      - name: Cheack
         uses: actions/checkout@v2
       - runs: npm install
-
-  check-format-code:
-    name: Check Format Code
-    runs-on: ubuntu-latest
-    steps:
-      - name: check format code
-        uses: actions/checkout@v2
       - runs: npm run prettier-check
-
-  test-code:
-    name: Test Code
-    runs-on: ubuntu-latest
-    steps:
-      - name: test code
-        uses: actions/checkout@v2
       - runs: npm run test
